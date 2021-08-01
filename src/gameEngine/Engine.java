@@ -38,6 +38,21 @@ public class Engine implements Runnable
         this.height = height;
     }
 
+    /*
+     * The initialization sequence is split into three parts:
+     * 1. preInit()
+     * 2. init()
+     * 3. postInit()
+     *
+     * this is used to maximize efficiency when initializing
+     * assets and other core components
+     */
+
+    /**
+     * Pre-initialization
+     *
+     * usually used to initialize textures
+     */
     private void preInit()
     {
         Textures.init();
@@ -47,6 +62,9 @@ public class Engine implements Runnable
         System.out.println("[System]: initialization/INFO - Successfully pre-initialized game (Game)");
     }
 
+    /**
+     *
+     */
     private void init()
     {
         display = new Display(title, width, height);
@@ -89,7 +107,9 @@ public class Engine implements Runnable
     }
 
     /**
+     * Handles the thread, ticking, and rendering of the game, as well as invoking the initialization sequences.
      *
+     * manages the maximum FPS which is determined in Reference file
      */
     @Override
     public void run()

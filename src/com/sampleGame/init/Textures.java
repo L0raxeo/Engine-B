@@ -13,6 +13,9 @@ public class Textures
 
     public static BufferedImage sample_texture;
 
+    /**
+     * Load/initialize texture with correct path (example below - sample_texture)
+     */
     public static void init()
     {
         sample_texture = ImageLoader.loadImage("/assets/samples/textures/sample_texture.png");

@@ -12,6 +12,9 @@ public class Scenes
 
     public static Scene sampleScene;
 
+    /**
+     * Load/initialize scene with correct path (example below - sampleScene)
+     */
     public static void init()
     {
         sampleScene = new SampleScene();

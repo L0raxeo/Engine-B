@@ -22,6 +22,12 @@ public class Display
         createDisplay();
     }
 
+    /**
+     * Creates the Display:
+     * - Creates JFrame and sets attributes according to Reference file
+     * - Creates Canvas (where the game draws' graphics)
+     * - Adds/attaches the canvas to the JFrame
+     */
     private void createDisplay()
     {
         frame = new JFrame(title);

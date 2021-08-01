@@ -9,6 +9,9 @@ public class Sounds
 
     public static String sample_audio;
 
+    /**
+     * Load/initialize sound file with correct path (example below - sample_audio)
+     */
     public static void init()
     {
         sample_audio = "assets/samples/sfx/sample_audio.wav";

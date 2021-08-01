@@ -13,6 +13,9 @@ public class Fonts
 
     public static Font sample_font;
 
+    /**
+     * Load/initialize font with correct path (example below - sample_font)
+     */
     public static void init()
     {
         sample_font = FontLoader.loadFont("assets/samples/fonts/sample_font.ttf", 32);
