@@ -6,6 +6,21 @@ import java.awt.event.KeyListener;
 public class KeyManager implements KeyListener
 {
 
+    public static boolean onKeyPress(KeyEvent e)
+    {
+        return false;
+    }
+
+    public static boolean onKeyRelease(KeyEvent e)
+    {
+        return false;
+    }
+
+    public static boolean onKeyHeld(KeyEvent e)
+    {
+        return false;
+    }
+
     @Override
     public void keyTyped(KeyEvent e)
     {
