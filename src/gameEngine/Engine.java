@@ -12,6 +12,10 @@ import gameEngine.ui.UIManager;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/*
+ * test commit
+ */
+
 public class Engine implements Runnable
 {
 
@@ -95,9 +99,9 @@ public class Engine implements Runnable
         System.out.println("[System]: initialization/INFO - Fully initialized system. Any output from now on will not be part of the system, unless it's an error");
         System.out.println("_______                                                     ______");
         System.out.println("| ____|=====================================================|  __  \\");
-        System.out.println("| |___  __________________      ----------  ______          |  --  /");
-        System.out.println("| ____| | |/____  \\/  __  \\_____| |/____  \\/     | __       |  __ <");
-        System.out.println("| |___  |  /    | |  |__| |_____|  /    | |  |_| |/ / |===| | | |  |");
+        System.out.println("| |___  __________________      ----------  ______          | |--| /");
+        System.out.println("| ____| | |/____  \\/  __  \\_____| |/____  \\/     | __       |  _  <");
+        System.out.println("| |___  |  /    | |  |__| |_____|  /    | |  |_| |/ / |===| | |_|  |");
         System.out.println("|_____| |_|     |_|\\____  /     |_|     |_|\\_______/        |_____/");
         System.out.println("                    ____| |=================================| |");
         System.out.println("                   |______|");
