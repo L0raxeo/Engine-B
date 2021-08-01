@@ -7,6 +7,18 @@ import java.awt.image.BufferedImage;
 public class UIImageButton extends UIObject
 {
 
+    /**
+     * The BufferedImage[] (array) stores two frames:
+     * images[0] = idle texture
+     * images[1] = hovering texture
+     *
+     * in other words:
+     *
+     * Index 1: idle texture
+     * Index 2: hovering texture
+     *
+     * However, hovering in this case means selected
+     */
     private final BufferedImage[] images;
     private final ClickListener clicker;
 
@@ -32,6 +44,15 @@ public class UIImageButton extends UIObject
     @Override
     public void tick() {}
 
+    /**
+     * the rendering method doubles as a method that renders
+     * to the screen while also handling the button's current
+     * state (hovering or not-hovering). If the cursor is
+     * hovering over the button, then it draws the second frame
+     * in the images array.
+     *
+     * @param g allows to draw the graphics of the components
+     */
     public void render(Graphics g)
     {
         if (hovering)
@@ -46,12 +67,31 @@ public class UIImageButton extends UIObject
         }
     }
 
+    /**
+     * if you don't know what "super" does in this context, it is basically
+     * saying that the function of this method has the same function as the
+     * super class' onMouseMove() method. To see it, just go to UIObject, &
+     * look for the onMouseMove() method.
+     *
+     * @param e represents mouse event
+     *          used to pass along the
+     */
     @Override
     public void onMouseMove(MouseEvent e)
     {
         super.onMouseMove(e);
     }
 
+    /**
+     * When the UIImageButton is pressed,
+     * the button checks whether it is clickable
+     * or not (which is determined when the button
+     * is first created). If it is, then it clicks
+     * the button. The "clickable" boolean is
+     * useful when you are in a menu and there is
+     * a button that has a function that has not
+     * been unlocked, or one that is not accessible
+     */
     @Override
     public void onPress()
     {

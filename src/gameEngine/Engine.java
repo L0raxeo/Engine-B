@@ -49,9 +49,9 @@ public class Engine implements Runnable
      */
 
     /**
-     * Pre-initialization
+     * Pre-Initialization
      *
-     * usually used to initialize textures
+     * Usually used to initialize textures
      */
     private void preInit()
     {
@@ -63,7 +63,10 @@ public class Engine implements Runnable
     }
 
     /**
+     * Initialization
      *
+     * Used to initialize the Display (Application Window)
+     * and also add listeners (KeyListener, MouseListener... etc)
      */
     private void init()
     {
@@ -72,6 +75,12 @@ public class Engine implements Runnable
         System.out.println("[System]: initialization/INFO - Successfully initialize game (Game)");
     }
 
+    /**
+     * Post-Initialization
+     *
+     * Used to initialize managers (EntityManager, UIManager... etc)
+     * Also used to initialize states
+     */
     private void postInit()
     {
         Scenes.init();
@@ -79,11 +88,28 @@ public class Engine implements Runnable
         System.out.println("[System]: initialization/INFO - Successfully post-initialized game (Game)");
     }
 
+    /**
+     * tick() updates the current scene
+     */
     private void tick()
     {
 
     }
 
+    /**
+     * render() renders the current scene to the Canvas
+     *
+     * - Uses buffer strategy (3 buffers)
+     *
+     * Process:
+     * 1. sets buffer strategy to canvas' buffer strategy
+     * 2. checks if the buffer strategy is null after attempting to get the canvas buffer strategy
+     * 3. if the buffer strategy is null, it creates one with 3 buffers
+     * 4. sets the Graphics (g) to the drawn graphics on buffer strategy
+     * 5. clears screen for next frame
+     * 6. draws scene
+     * 7. Ends the drawing: shows buffers, and disposes graphics
+     */
     private void render()
     {
         BufferStrategy bs = display.getCanvas().getBufferStrategy();
@@ -152,6 +178,10 @@ public class Engine implements Runnable
         stop();
     }
 
+    /**
+     * Because the engine is running on a thread, the
+     * start and stop method have to be synchronized
+     */
     public synchronized void start()
     {
         if (running) return;
