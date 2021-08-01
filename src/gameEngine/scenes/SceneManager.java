@@ -1,5 +1,7 @@
 package gameEngine.scenes;
 
+import gameEngine.ui.UIManager;
+
 public class SceneManager
 {
 
@@ -7,6 +9,14 @@ public class SceneManager
      * Active scene
      */
     private static Scene currentScene = null;
+
+    /**
+     * @return current scene since the static object is private
+     */
+    public static Scene getCurrentScene()
+    {
+        return currentScene;
+    }
 
     /**
      * Sets the scene by setting the current scene
@@ -17,7 +27,7 @@ public class SceneManager
      */
     public static void setScene(Scene scene)
     {
-        // UIManager.getUIObjects().clear();
+        UIManager.getUIObjects().clear();
         currentScene = scene;
         currentScene.init();
     }

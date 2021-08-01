@@ -6,6 +6,8 @@ import com.sampleGame.init.Scenes;
 import com.sampleGame.init.Sounds;
 import com.sampleGame.init.Textures;
 import gameEngine.display.Display;
+import gameEngine.scenes.SceneManager;
+import gameEngine.ui.UIManager;
 
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -25,6 +27,8 @@ public class Engine implements Runnable
 
     private Thread thread;
     private boolean running = false;
+
+    public static UIManager uiManager;
 
     /**
      * @param title of Display
@@ -83,6 +87,8 @@ public class Engine implements Runnable
      */
     private void postInit()
     {
+        uiManager = new UIManager();
+
         Scenes.init();
 
         System.out.println("[System]: initialization/INFO - Successfully post-initialized game (Game)");
@@ -98,11 +104,15 @@ public class Engine implements Runnable
     }
 
     /**
-     * tick() updates the current scene
+     * Ticks key manager and mouse manager
+     *
+     * If there is a current scene loaded,
+     * it will tick it
      */
     private void tick()
     {
-
+        if (SceneManager.getCurrentScene() != null)
+            SceneManager.getCurrentScene().tick();
     }
 
     /**
@@ -116,7 +126,7 @@ public class Engine implements Runnable
      * 3. if the buffer strategy is null, it creates one with 3 buffers
      * 4. sets the Graphics (g) to the drawn graphics on buffer strategy
      * 5. clears screen for next frame
-     * 6. draws scene
+     * 6. draws scene if there is an active scene
      * 7. Ends the drawing: shows buffers, and disposes graphics
      */
     private void render()
@@ -134,7 +144,8 @@ public class Engine implements Runnable
         g.clearRect(0, 0, width, height);
         // Draw Here
 
-
+        if (SceneManager.getCurrentScene() != null)
+            SceneManager.getCurrentScene().render(g);
 
         // End Drawing
         bs.show();
