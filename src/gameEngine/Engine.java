@@ -86,6 +86,15 @@ public class Engine implements Runnable
         Scenes.init();
 
         System.out.println("[System]: initialization/INFO - Successfully post-initialized game (Game)");
+        System.out.println("[System]: initialization/INFO - Fully initialized system. Any output from now on will not be part of the system, unless it's an error");
+        System.out.println("_______");
+        System.out.println("| ____|======================================");
+        System.out.println("| |___  __________________      ----------");
+        System.out.println("| ____| | |/____  \\/  __  \\_____| |/____  \\");
+        System.out.println("| |___  |  /    | |  |__| |_____|  /    | |");
+        System.out.println("|_____| |_|     |_|\\____  /     |_|     |_|");
+        System.out.println("                    ____| |");
+        System.out.println("                   |______|");
     }
 
     /**

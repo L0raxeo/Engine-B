@@ -12,6 +12,11 @@ public class Display
     private Canvas canvas;
 
     private final String title;
+
+    /**
+     * Holds the width and the height
+     * of Display
+     */
     private final Dimension size;
 
     public Display(String title, int width, int height)
