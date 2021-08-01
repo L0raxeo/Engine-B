@@ -26,7 +26,10 @@ public abstract class Scene
      * Each scene has an initialization which is invoked (called)
      * when it is first activated (set as the current scene)
      */
-    public abstract void init();
+    public void init()
+    {
+
+    }
 
     /**
      * Ticks the scene (this is where all the changes in the scene are updated/synced)
@@ -41,9 +44,21 @@ public abstract class Scene
      */
     public abstract void render(Graphics g);
 
+    /**
+     * Optional @Override method for adding UIObjects
+     *
+     * If this method is added to the scene, then it will be invoked (called) automatically
+     *
+     * When you implement this method into your scene,
+     * it will automatically add the argument:
+     * super.addUIObjects();
+     * which just calls the print method written below.
+     * However, the creators can always remove that super
+     * argument if s/he does not want it there.
+     */
     public void addUIObjects()
     {
-
+        System.out.println("[System]: thread/INFO - Added UI Objects to UIObject Manager");
     }
 
 }

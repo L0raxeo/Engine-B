@@ -30,6 +30,7 @@ public class SceneManager
         UIManager.getUIObjects().clear();
         currentScene = scene;
         currentScene.init();
+        currentScene.addUIObjects();
     }
 
 }
