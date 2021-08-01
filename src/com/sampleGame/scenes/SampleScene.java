@@ -1,5 +1,6 @@
 package com.sampleGame.scenes;
 
+import com.sampleGame.init.Textures;
 import gameEngine.scenes.Scene;
 
 import java.awt.*;
@@ -14,16 +15,18 @@ public class SampleScene extends Scene
 
     }
 
+    // Update scene here
     @Override
     public void tick()
     {
 
     }
 
+    // Render scene here
     @Override
     public void render(Graphics g)
     {
-
+        g.drawImage(Textures.sample_texture, 0, 0, 73, 22, null);
     }
 
 }
