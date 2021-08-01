@@ -1,9 +1,13 @@
 package com.sampleGame.scenes;
 
+import com.sampleGame.init.Fonts;
 import com.sampleGame.init.Textures;
 import gameEngine.scenes.Scene;
+import gameEngine.ui.UIImageButton;
+import gameEngine.ui.UIManager;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class SampleScene extends Scene
 {
@@ -26,7 +30,12 @@ public class SampleScene extends Scene
     @Override
     public void render(Graphics g)
     {
-        g.drawImage(Textures.sample_texture, 0, 0, 73, 22, null);
+        g.drawImage(Textures.sample_texture, 0, 0, 292, 88, null);
     }
 
+    @Override
+    public void addUIObjects()
+    {
+
+    }
 }
