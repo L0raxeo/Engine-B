@@ -12,10 +12,6 @@ import gameEngine.ui.UIManager;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
-/*
- * test commit
- */
-
 public class Engine implements Runnable
 {
 
