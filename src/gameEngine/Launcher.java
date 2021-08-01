@@ -2,12 +2,6 @@ package gameEngine;
 
 import com.sampleGame.Reference;
 
-/*
- * test note
- *
- * response test note
- */
-
 /**
  * launches game
  */
