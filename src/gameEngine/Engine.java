@@ -118,7 +118,7 @@ public class Engine implements Runnable
      */
     private void tick()
     {
-        KeyManager.tick();
+        keyManager.tick();
 
         if (SceneManager.getCurrentScene() != null)
             SceneManager.getCurrentScene().tick();
