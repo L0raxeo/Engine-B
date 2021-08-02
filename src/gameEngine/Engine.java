@@ -8,6 +8,7 @@ import com.sampleGame.init.Textures;
 import gameEngine.display.Display;
 import gameEngine.entities.EntityManager;
 import gameEngine.input.KeyManager;
+import gameEngine.input.MouseManager;
 import gameEngine.scenes.SceneManager;
 import gameEngine.ui.UIManager;
 
@@ -31,6 +32,7 @@ public class Engine implements Runnable
     private boolean running = false;
 
     public static KeyManager keyManager;
+    public static MouseManager mouseManager;
 
     public static EntityManager entityManager;
     public static UIManager uiManager;
@@ -69,6 +71,7 @@ public class Engine implements Runnable
         Sounds.init();
 
         keyManager = new KeyManager();
+        mouseManager = new MouseManager();
 
         System.out.println("[System]: initialization/INFO - Successfully pre-initialized game (Game)");
     }
@@ -84,6 +87,8 @@ public class Engine implements Runnable
         display = new Display(title, width, height);
 
         display.getFrame().addKeyListener(keyManager);
+        display.getCanvas().addMouseListener(mouseManager);
+        display.getCanvas().addMouseMotionListener(mouseManager);
 
         System.out.println("[System]: initialization/INFO - Successfully initialize game (Game)");
     }
@@ -122,6 +127,7 @@ public class Engine implements Runnable
     private void tick()
     {
         keyManager.tick();
+        mouseManager.tick();
 
         if (SceneManager.getCurrentScene() != null)
             SceneManager.getCurrentScene().tick();

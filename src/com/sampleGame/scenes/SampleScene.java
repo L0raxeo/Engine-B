@@ -27,7 +27,8 @@ public class SampleScene extends Scene
     @Override
     public void init()
     {
-        entityManager.tick();
+        if (entityManager != null)
+            entityManager.tick();
     }
 
     // Update scene here
