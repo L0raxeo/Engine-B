@@ -23,7 +23,7 @@ public class KeyManager implements KeyListener
      */
     public KeyManager()
     {
-        keys = new boolean[256];
+        keys = new boolean[1080];
     }
 
     /**
@@ -114,6 +114,46 @@ public class KeyManager implements KeyListener
         Keys.down = keys[KeyEvent.VK_DOWN];
         Keys.left = keys[KeyEvent.VK_LEFT];
         Keys.right = keys[KeyEvent.VK_RIGHT];
+    }
+
+    private static boolean hasPressed = false;
+    private static boolean hasReleased = false;
+
+    public static boolean onKeyDown(boolean key)
+    {
+        if (key && !hasPressed)
+        {
+            hasPressed = true;
+            return true;
+        }
+        else if (!key)
+        {
+            hasPressed = false;
+            return false;
+        }
+        else
+            return false;
+    }
+
+    public static boolean onKeyReleased(boolean key)
+    {
+        if (!key && !hasReleased)
+        {
+            hasReleased = true;
+            return true;
+        }
+        else if (key)
+        {
+            hasReleased = false;
+            return false;
+        }
+        else
+            return false;
+    }
+
+    public static boolean onKeyHeld(boolean key)
+    {
+        return key;
     }
 
     @Override

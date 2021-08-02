@@ -2,6 +2,7 @@ package com.sampleGame.scenes;
 
 import com.sampleGame.init.Textures;
 import gameEngine.input.KeyManager;
+import gameEngine.input.Keys;
 import gameEngine.scenes.Scene;
 
 import java.awt.*;
@@ -21,7 +22,8 @@ public class SampleScene extends Scene
     @Override
     public void tick()
     {
-
+        if (KeyManager.onKeyDown(Keys.backtick))
+            System.out.println("kys");
     }
 
     // Render scene here
