@@ -6,6 +6,7 @@ import com.sampleGame.init.Scenes;
 import com.sampleGame.init.Sounds;
 import com.sampleGame.init.Textures;
 import gameEngine.display.Display;
+import gameEngine.entities.EntityManager;
 import gameEngine.input.KeyManager;
 import gameEngine.scenes.SceneManager;
 import gameEngine.ui.UIManager;
@@ -31,6 +32,7 @@ public class Engine implements Runnable
 
     public static KeyManager keyManager;
 
+    public static EntityManager entityManager;
     public static UIManager uiManager;
 
     /**
@@ -94,6 +96,7 @@ public class Engine implements Runnable
      */
     private void postInit()
     {
+        entityManager = new EntityManager();
         uiManager = new UIManager();
 
         Scenes.init();

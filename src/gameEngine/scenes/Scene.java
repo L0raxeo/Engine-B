@@ -1,15 +1,21 @@
 package gameEngine.scenes;
 
+import gameEngine.entities.EntityManager;
+
 import java.awt.*;
 
 public abstract class Scene
 {
 
+    protected EntityManager entityManager;
+
+    protected boolean active = false;
+
     /**
      * Constructor is invoked (called) when the scene is first created
      * and therefore invokes (calls) the Awake() method (if there is one)
      */
-    public Scene()
+    public Scene(EntityManager entityManager)
     {
         Awake();
     }

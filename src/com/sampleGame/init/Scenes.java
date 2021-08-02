@@ -1,6 +1,7 @@
 package com.sampleGame.init;
 
 import com.sampleGame.scenes.SampleScene;
+import gameEngine.Engine;
 import gameEngine.scenes.Scene;
 import gameEngine.scenes.SceneManager;
 
@@ -20,7 +21,7 @@ public class Scenes
      */
     public static void init()
     {
-        sampleScene = new SampleScene();
+        sampleScene = new SampleScene(Engine.entityManager);
 
         SceneManager.setScene(sampleScene);
 

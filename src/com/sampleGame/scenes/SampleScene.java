@@ -1,6 +1,7 @@
 package com.sampleGame.scenes;
 
 import com.sampleGame.init.Textures;
+import gameEngine.entities.EntityManager;
 import gameEngine.input.KeyManager;
 import gameEngine.input.Keys;
 import gameEngine.scenes.Scene;
@@ -11,19 +12,29 @@ import java.awt.event.KeyEvent;
 public class SampleScene extends Scene
 {
 
+    /**
+     * Constructor is invoked (called) when the scene is first created
+     * and therefore invokes (calls) the Awake() method (if there is one)
+     *
+     * @param entityManager used to manage all entities
+     */
+    public SampleScene(EntityManager entityManager)
+    {
+        super(entityManager);
+    }
+
     // Called when scene is activated (set to the current scene)
     @Override
     public void init()
     {
-
+        entityManager.tick();
     }
 
     // Update scene here
     @Override
     public void tick()
     {
-        if (KeyManager.onKeyDown(Keys.backtick))
-            System.out.println("kys");
+
     }
 
     // Render scene here
