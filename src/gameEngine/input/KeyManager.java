@@ -6,31 +6,9 @@ import java.awt.event.KeyListener;
 public class KeyManager implements KeyListener
 {
 
-    private final boolean[] keys;
-
-    public KeyManager()
-    {
-        keys = new boolean[256];
-    }
-
-    public void tick()
+    public static void tick()
     {
 
-    }
-
-    public static boolean onKeyPress(KeyEvent e)
-    {
-        return false;
-    }
-
-    public static boolean onKeyRelease(KeyEvent e)
-    {
-        return false;
-    }
-
-    public static boolean onKeyHeld(KeyEvent e)
-    {
-        return false;
     }
 
     @Override

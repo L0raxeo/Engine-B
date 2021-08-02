@@ -6,6 +6,7 @@ import com.sampleGame.init.Scenes;
 import com.sampleGame.init.Sounds;
 import com.sampleGame.init.Textures;
 import gameEngine.display.Display;
+import gameEngine.input.KeyManager;
 import gameEngine.scenes.SceneManager;
 import gameEngine.ui.UIManager;
 
@@ -27,6 +28,8 @@ public class Engine implements Runnable
 
     private Thread thread;
     private boolean running = false;
+
+    public static KeyManager keyManager;
 
     public static UIManager uiManager;
 
@@ -55,13 +58,15 @@ public class Engine implements Runnable
     /**
      * Pre-Initialization
      *
-     * Usually used to initialize textures
+     * Usually used to initialize assets and input managers
      */
     private void preInit()
     {
         Textures.init();
         Fonts.init();
         Sounds.init();
+
+        keyManager = new KeyManager();
 
         System.out.println("[System]: initialization/INFO - Successfully pre-initialized game (Game)");
     }
@@ -75,6 +80,8 @@ public class Engine implements Runnable
     private void init()
     {
         display = new Display(title, width, height);
+
+        display.getFrame().addKeyListener(keyManager);
 
         System.out.println("[System]: initialization/INFO - Successfully initialize game (Game)");
     }
@@ -111,6 +118,8 @@ public class Engine implements Runnable
      */
     private void tick()
     {
+        KeyManager.tick();
+
         if (SceneManager.getCurrentScene() != null)
             SceneManager.getCurrentScene().tick();
     }

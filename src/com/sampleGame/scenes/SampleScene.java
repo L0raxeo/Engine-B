@@ -1,9 +1,11 @@
 package com.sampleGame.scenes;
 
 import com.sampleGame.init.Textures;
+import gameEngine.input.KeyManager;
 import gameEngine.scenes.Scene;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class SampleScene extends Scene
 {
