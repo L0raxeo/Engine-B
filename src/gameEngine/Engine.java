@@ -15,6 +15,10 @@ import gameEngine.ui.UIManager;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
 
+/**
+ * imagine not being able to setup github correctly
+ */
+
 public class Engine implements Runnable
 {
 
@@ -108,14 +112,12 @@ public class Engine implements Runnable
 
         System.out.println("[System]: initialization/INFO - Successfully post-initialized game (Game)");
         System.out.println("[System]: initialization/INFO - Fully initialized system. Any output from now on will not be part of the system, unless it's an error");
-        System.out.println("_______                                                     ______");
-        System.out.println("| ____|=====================================================|  __  \\");
-        System.out.println("| |___  __________________      ----------  ______          | |--| /");
-        System.out.println("| ____| | |/____  \\/  __  \\_____| |/____  \\/     | __       |  _  <");
-        System.out.println("| |___  |  /    | |  |__| |_____|  /    | |  |_| |/ / |===| | |_|  |");
-        System.out.println("|_____| |_|     |_|\\____  /     |_|     |_|\\_______/        |_____/");
-        System.out.println("                    ____| |=================================| |");
-        System.out.println("                   |______|");
+        System.out.println("  _____             _              ____  ");
+        System.out.println(" | ____|_ __   __ _(_)_ __   ___  | __ ) ");
+        System.out.println(" |  _| | '_ \\ / _` | | '_ \\ / _ \\ |  _ \\ ");
+        System.out.println(" | |___| | | | (_| | | | | |  __/ | |_) |");
+        System.out.println(" |_____|_| |_|\\__, |_|_| |_|\\___| |____/ ");
+        System.out.println("              |___/                      ");
     }
 
     /**
