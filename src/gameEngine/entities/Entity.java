@@ -164,14 +164,14 @@ public abstract class Entity
      * Getters
      */
 
-    public float getX()
+    public int getX()
     {
-        return x;
+        return (int) x;
     }
 
-    public float getY()
+    public int getY()
     {
-        return y;
+        return (int) y;
     }
 
     public int getWidth()
